@@ -1,18 +1,22 @@
 <template>
-  <div class="test">
-    <h1>counter</h1>
-    <p>{{ total }}</p>
-    <button-counter @increment="incrementTotal"/>
-    <button-counter @increment="incrementTotal"/>
+  <div class="container">
+    <p class="text">Page data: {{ total }}</p>
+
+    <div class="buttons-wrapper">
+      <ButtonCounter @increment="incrementTotal"/>
+      <ButtonCounter @increment="incrementTotal"/>
+    </div>
+
     <div><nuxt-link to="/" exact>Home</nuxt-link></div>
   </div>
 </template>
 
 <script>
-import ButtonCounter from '../../components/ButtonCounter';
+import ButtonCounter from '~/components/ButtonCounter';
 
 export default {
   name: 'Counter',
+  layout: 'other',
   components: {
     ButtonCounter,
   },
@@ -36,8 +40,27 @@ export default {
 </script>
 
 <style scoped>
-  .test {
-    font-size: 40px;
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: #35495e;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  .container * {
+    margin: 30px;
+  }
+
+  .buttons-wrapper * {
+    margin: 10px;
+  }
+
+  a {
+    margin: 10px;
   }
 </style>

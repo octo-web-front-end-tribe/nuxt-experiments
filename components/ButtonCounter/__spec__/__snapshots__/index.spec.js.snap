@@ -4,6 +4,6 @@ exports[`ButtonCounter should match snapshot 1`] = `
 <button
   class="test"
 >
-  0
+  Button data: 0
 </button>
 `;

@@ -27,7 +27,6 @@ module.exports = {
     'semi': [2, 'always'],
     'comma-dangle': [2, 'always-multiline'],
     'vue/max-attributes-per-line': [0],
-    'vue/require-v-for-key': [0], // most of the loops are static, so we don't enforce this rule
   },
   globals: {
     'jsdom': true,

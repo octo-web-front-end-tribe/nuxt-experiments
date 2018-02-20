@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <logo/>
+    <Logo/>
     <h1 class="title">
       {{ msg }}
     </h1>
@@ -19,12 +19,18 @@
 import Logo from '../components/Logo';
 
 export default {
+  name: 'Home',
   components: {
     Logo,
   },
   data () {
     return {
       msg: 'Welcome',
+    };
+  },
+  head () {
+    return {
+      title: `Dynamic head title : ${this.msg}`,
     };
   },
 };

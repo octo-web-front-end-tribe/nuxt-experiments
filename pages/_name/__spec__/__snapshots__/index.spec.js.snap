@@ -4,8 +4,6 @@ exports[`/_name should match snapshot 1`] = `
 <section
   class="container"
 >
-  <!---->
-   
   <h1
     class="title"
   >
@@ -13,6 +11,8 @@ exports[`/_name should match snapshot 1`] = `
     Welcome 
   
   </h1>
+   
+  <!---->
    
   <div>
     <nuxt-link

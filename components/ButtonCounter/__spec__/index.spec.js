@@ -17,32 +17,34 @@ describe('ButtonCounter', () => {
 
     // then
     const button = wrapper.find('.test');
-    expect(button.text()).toEqual('0');
+    expect(button.text()).toContain('0');
   });
 
-  it('should increment counter on click', () => {
-    // given
-    const wrapper = shallow(ButtonCounter);
-    const button = wrapper.find('.test');
+  describe('on click', () => {
+    it('should increment counter on click', () => {
+      // given
+      const wrapper = shallow(ButtonCounter);
+      const button = wrapper.find('.test');
 
-    // when
-    button.trigger('click');
+      // when
+      button.trigger('click');
 
-    // then
-    expect(button.text()).toEqual('1');
-  });
+      // then
+      expect(button.text()).toContain('1');
+    });
 
-  it('should emit an event increment on click', () => {
-    // given
-    const wrapper = shallow(ButtonCounter);
-    const button = wrapper.find('.test');
-    const spy = jest.fn();
-    wrapper.vm.$on('increment', spy);
+    it('should emit an event increment on click', () => {
+      // given
+      const wrapper = shallow(ButtonCounter);
+      const button = wrapper.find('.test');
+      const spy = jest.fn();
+      wrapper.vm.$on('increment', spy);
 
-    // when
-    button.trigger('click');
+      // when
+      button.trigger('click');
 
-    // then
-    expect(spy).toHaveBeenCalledTimes(1);
+      // then
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
   });
 });

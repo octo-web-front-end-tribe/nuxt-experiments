@@ -13,3 +13,7 @@ coverage/
 *.ntvs*
 *.njsproj
 *.sln
+*.iws
+*.iml
+*.ipr
+out/

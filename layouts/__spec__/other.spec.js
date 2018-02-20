@@ -1,10 +1,10 @@
 import {shallow} from '@vue/test-utils';
-import Default from '../default.vue';
+import Other from '../other.vue';
 
-describe('layout | default', () => {
+describe('layout | other', () => {
   it('should match snapshot', () => {
     // when
-    const wrapper = shallow(Default);
+    const wrapper = shallow(Other);
 
     // then
     expect(wrapper.element).toBeDefined();

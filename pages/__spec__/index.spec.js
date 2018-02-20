@@ -13,6 +13,14 @@ describe('root page', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it('should be named Home', () => {
+    // when
+    const wrapper = shallow(Home);
+
+    // then
+    expect(wrapper.vm.$options.name).toEqual('Home');
+  });
+
   it('should contain logo component', () => {
     // given
     const wrapper = shallow(Home);
@@ -40,6 +48,23 @@ describe('root page', () => {
       const title = wrapper.find('h1');
       wrapper.setData({msg: 'test'});
       expect(title.text()).toContain('test');
+    });
+  });
+
+  it('should set head', () => {
+    // given
+    const wrapper = shallow(Home);
+    const context = {
+      msg: 'fake msg',
+    };
+    const headWithContext = wrapper.vm.$options.head.bind(context);
+
+    // when
+    const result = headWithContext();
+
+    // then
+    return expect(result).toEqual({
+      title: 'Dynamic head title : fake msg',
     });
   });
 });

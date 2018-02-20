@@ -1,20 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/counter should match snapshot 1`] = `
+exports[`pages | counter should match snapshot 1`] = `
 <div
-  class="test"
+  class="container"
 >
-  <h1>
-    counter
-  </h1>
-   
-  <p>
-    0
+  <p
+    class="text"
+  >
+    Page data: 0
   </p>
    
-  <!---->
-   
-  <!---->
+  <div
+    class="buttons-wrapper"
+  >
+    <!---->
+     
+    <!---->
+  </div>
    
   <div>
     <nuxt-link

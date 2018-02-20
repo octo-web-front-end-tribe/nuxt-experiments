@@ -17,10 +17,11 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.1",
-    "nuxt": "^1.3.0"
+    "nuxt": "^1.3.0",
+    "vue-multiselect": "^2.0.8"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.11",
+    "@vue/test-utils": "1.0.0-beta.11",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.2.2",
     "babel-preset-es2015": "^6.24.1",

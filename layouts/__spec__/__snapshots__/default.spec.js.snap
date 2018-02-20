@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Default layout should match snapshot 1`] = `
+exports[`layout | default should match snapshot 1`] = `
 <div>
   <nuxt />
 </div>

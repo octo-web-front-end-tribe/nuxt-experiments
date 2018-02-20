@@ -3,7 +3,7 @@ import ButtonCounter from '~/components/ButtonCounter';
 
 import Counter from '../index';
 
-describe('/counter', () => {
+describe('pages | counter', () => {
   it('should match snapshot', () => {
     // when
     const wrapper = shallow(Counter);
@@ -11,6 +11,22 @@ describe('/counter', () => {
     // then
     expect(wrapper.element).toBeDefined();
     expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('should be named Counter', () => {
+    // when
+    const wrapper = shallow(Counter);
+
+    // then
+    expect(wrapper.vm.$options.name).toEqual('Counter');
+  });
+
+  it('should use layout other', () => {
+    // when
+    const wrapper = shallow(Counter);
+
+    // then
+    expect(wrapper.vm.$options.layout).toEqual('other');
   });
 
   describe('asyncData', () => {
@@ -33,13 +49,28 @@ describe('/counter', () => {
     });
   });
 
-  it('should initialize counter to 0', () => {
-    // when
-    const wrapper = shallow(Counter);
+  describe('data', () => {
+    it('should initialize counter to 0', () => {
+      // when
+      const wrapper = shallow(Counter);
 
-    // then
-    const paragraph = wrapper.find('p');
-    expect(paragraph.text()).toEqual('0');
+      // then
+      const paragraph = wrapper.find('p');
+      expect(paragraph.text()).toContain('0');
+    });
+
+    it('should inject total data', () => {
+      // given
+      const wrapper = shallow(Counter);
+      const total = 42;
+
+      // when
+      wrapper.setData({total});
+
+      // then
+      const paragraph = wrapper.find('p');
+      expect(paragraph.text()).toContain('42');
+    });
   });
 
   it('should increment counter on event increment from either buttons', () => {
@@ -54,6 +85,6 @@ describe('/counter', () => {
 
     // then
     const paragraph = wrapper.find('p');
-    expect(paragraph.text()).toEqual('2');
+    expect(paragraph.text()).toContain('2');
   });
 });

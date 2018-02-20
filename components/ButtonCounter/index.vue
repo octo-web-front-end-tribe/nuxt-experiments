@@ -1,5 +1,5 @@
 <template>
-  <button @click="incrementCounter" class="test">{{ counter }}</button>
+  <button @click="incrementCounter" class="test">Button data: {{ counter }}</button>
 </template>
 
 <script>
@@ -22,6 +22,5 @@ export default {
 <style scoped>
   .test {
     font-size: 30px;
-    color: red;
   }
 </style>

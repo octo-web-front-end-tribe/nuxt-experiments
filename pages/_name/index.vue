@@ -1,9 +1,19 @@
 <template>
   <section class="container">
-    <logo/>
     <h1 class="title">
-      {{ msg }} {{ nameParam }}
+      {{ selectedOption }} {{ nameParam }}
     </h1>
+
+    <Multiselect
+      v-model="selectedOption"
+      :options="options"
+      :searchable="false"
+      :allow-empty="false"
+      select-label=""
+      selected-label=""
+      deselect-label=""
+    />
+
     <div>
       <nuxt-link to="/counter">Counter</nuxt-link>
       <nuxt-link to="/" exact>Back to home</nuxt-link>
@@ -12,15 +22,17 @@
 </template>
 
 <script>
-import Logo from '../../components/Logo';
+import Multiselect from 'vue-multiselect';
 
 export default {
+  name: 'Welcome',
   components: {
-    Logo,
+    Multiselect,
   },
   data () {
     return {
-      msg: 'Welcome',
+      options: ['Welcome', 'Bonjour', 'Ciao'],
+      selectedOption: 'Welcome',
     };
   },
   computed: {
@@ -50,11 +62,12 @@ export default {
     letter-spacing: 1px;
   }
 
-  .links {
-    padding-top: 15px;
+  a {
+    margin: 10px;
   }
 
-  a {
+  .multiselect {
+    max-width: 200px;
     margin: 10px;
   }
 </style>
